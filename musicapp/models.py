@@ -34,3 +34,7 @@ class Lyric(AbstractBaseModel):
 
     def __str__(self):
         return self.content[:10]
+
+    
+    def short_content(self):
+        return self.content[:100]
