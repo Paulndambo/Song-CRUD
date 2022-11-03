@@ -2,7 +2,7 @@
 
 ```
 Note: 
-You are allowed to merge the branches in the order of 
+You are allowed to merge the branches into master in the order of 
 week tasks into the master branch if need be.
 
 OR
