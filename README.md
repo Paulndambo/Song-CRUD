@@ -18,3 +18,7 @@ Just Checkout The Branch Named As the Week Task
 ```
 2. Week5Task Branch = Week 5 Task
 ```
+
+```
+3. Week6Task Branch = Week 6 Task
+```
