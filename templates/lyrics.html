@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<br />
+<h3 class="text-center">Lyrics List
+
+    <span>
+        <a href="{% url 'create-lyrics' %}" class="m-3 btn btn-primary">Add New Lyrics</a>
+    </span>
+</h3>
+
+<hr />
+<div class="row">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Song</th>
+                <th scope="col">content</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for lyric in lyrics %}
+            <tr>
+                <td>{{lyric.id}}</td>
+                <td>{{lyric.song}}</td>
+                <td>{{lyric.short_content}}</td>
+                
+                <td>
+                    <a href="{% url 'update-lyrics' lyric.pk %}" class="btn btn-primary">Update</a>
+                </td>
+                <td>
+                    <a href="{% url 'delete-lyrics' lyric.id %}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+
+        </tbody>
+    </table>
+</div>
+{% endblock content %}
