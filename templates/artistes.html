@@ -27,10 +27,10 @@
                 <td>{{artist.first_name}} {{artist.last_name}}</td>
                 <td>{{artist.age}}</td>
                 <td>
-                    <a href="#" class="btn btn-primary">Update</a>
+                    <a href="{% url 'update-artiste' artist.id %}" class="btn btn-primary">Update</a>
                 </td>
                 <td>
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    <a href="{% url 'delete-artiste' artist.id %}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             {% endfor %}

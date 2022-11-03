@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 class AbstractBaseModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -17,6 +17,9 @@ class Artiste(AbstractBaseModel):
     def __str__(self):
         return self.first_name + ' ' + self.last_name
 
+    def get_absolute_url(self):
+        return reverse('artists')
+
 
 class Song(AbstractBaseModel):
     artist = models.ForeignKey(Artiste, on_delete=models.CASCADE)
@@ -26,6 +29,9 @@ class Song(AbstractBaseModel):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('home')
 
 
 class Lyric(AbstractBaseModel):
@@ -38,3 +44,6 @@ class Lyric(AbstractBaseModel):
     
     def short_content(self):
         return self.content[:100]
+
+    def get_absolute_url(self):
+        return reverse('lyrics')

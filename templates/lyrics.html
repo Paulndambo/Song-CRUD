@@ -6,7 +6,7 @@
 <h3 class="text-center">Lyrics List
 
     <span>
-        <a href="#" class="m-3 btn btn-primary">Add New Lyrics</a>
+        <a href="{% url 'create-lyrics' %}" class="m-3 btn btn-primary">Add New Lyrics</a>
     </span>
 </h3>
 
@@ -30,10 +30,10 @@
                 <td>{{lyric.short_content}}</td>
                 
                 <td>
-                    <a href="#" class="btn btn-primary">Update</a>
+                    <a href="{% url 'update-lyrics' lyric.pk %}" class="btn btn-primary">Update</a>
                 </td>
                 <td>
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    <a href="{% url 'delete-lyrics' lyric.id %}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             {% endfor %}
