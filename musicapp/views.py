@@ -1,21 +1,20 @@
-<<<<<<< HEAD
-from django.shortcuts import render
-=======
 from django.shortcuts import render, redirect
 from .models import Song, Artiste, Lyric
 from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from django.http import HttpResponseRedirect
 
->>>>>>> Week5Task
 # Create your views here.
+
+"""
+Week 5 Task Views
+""""
+
 def home(request):
     songs = Song.objects.all()
     context = {
         "songs": songs
     }
     return render(request, "songs.html", context)
-
-
 
 class CreateSong(CreateView):
     model = Song
@@ -78,3 +77,10 @@ def delete_lyrics(request, id):
     lyric = Lyric.objects.get(pk=id)
     lyric.delete()
     return redirect("/lyrics")
+
+
+"""
+Week 6 Task Views
+
+Views for the APIs
+"""
