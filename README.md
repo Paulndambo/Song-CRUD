@@ -1,7 +1,11 @@
 # Song-CRUD
 
 ```
-Note: You are allowed to merge the branches in the order of week tasks into the master branch if need be.
+Note: 
+You are allowed to merge the branches in the order of 
+week tasks into the master branch if need be.
+
+Just Checkout The Branch Named As the Week Task
 ```
 
 ### Tasks:
