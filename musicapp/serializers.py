@@ -3,7 +3,7 @@ from .models import Song, Artiste, Lyric
 
 class ArtisteSerializer(serializers.ModelSerializer):
     class Meta:
-        mdoel = Artiste
+        model = Artiste
         fields = "__all__"
 
 

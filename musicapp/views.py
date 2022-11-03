@@ -3,11 +3,17 @@ from .models import Song, Artiste, Lyric
 from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from django.http import HttpResponseRedirect
 
+
+## Imports For the APIs
+from .serializers import SongSerializer, ArtisteSerializer, LyricSerializer
+from rest_framework.viewsets import ModelViewSet
+
+
 # Create your views here.
 
 """
 Week 5 Task Views
-""""
+"""
 
 def home(request):
     songs = Song.objects.all()
@@ -84,3 +90,15 @@ Week 6 Task Views
 
 Views for the APIs
 """
+class SongModelViewSet(ModelViewSet):
+    queryset = Song.objects.all()
+    serializer_class = SongSerializer
+
+
+class LyricModelViewSet(ModelViewSet):
+    queryset = Lyric.objects.all()
+    serializer_class = LyricSerializer
+
+class ArtisteModelViewSet(ModelViewSet):
+    queryset = Artiste.objects.all()
+    serializer_class = ArtisteSerializer
